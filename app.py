@@ -108,12 +108,14 @@ if st.session_state.go:
                 st.session_state.df.loc[st.session_state.df.Code == ipcode, 'Picture'] =f"{school_name}_{ipclass}_{ipsection}_{ipcode}_{ipname}.jpg"
                 ippic=f"{school_name}_{ipclass}_{ipsection}_{ipcode}_{ipname}.jpg"
                 print("Picture name: ",ippic)
-                with open(os.path.join("Data",ippic),"wb") as f: 
-                    f.write(picture.getvalue())
 
-                # session = ftplib.FTP('ftp.digidemy.in','u669719505.partha','Partha123$#@')
-                # session.storbinary(f'STOR {ippic}', picture)
-                # session.quit()
+                session = ftplib.FTP('ftp.digidemy.in','u669719505.partha','Partha123$#@')
+                session.storbinary(f'STOR {ippic}', picture)
+                session.quit()
+                #with open(os.path.join("Data",ippic),"wb") as f: 
+                    #f.write(picture.getvalue())
+
+                
                 # with open(f"Photo/{ipclass}/{ipsection}/{ipcode}_{ipname}.jpg", 'wb') as f: 
                 #     f.write(picture.getvalue())
         if(submit):
