@@ -25,7 +25,7 @@ def change_go():
 
 with r1c1:
     st.title('Data Entry')
-    school_name = st.text_input("Please Enter The School Code", "12345")
+    school_name = st.text_input("Please Enter The School Code", "JH2010")
     uploaded_file = st.file_uploader("Choose a file", type = 'xlsx')
     
     if uploaded_file is not None:
