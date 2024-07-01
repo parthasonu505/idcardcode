@@ -70,11 +70,11 @@ if st.session_state.go:
     # Filter the dataframe based on the input
     if(len(roll_no)):
         
-        filtered_df = st.session_state.df[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Roll'] == int(roll_no))]
-        index=st.session_state.df.index[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Roll'] == int(roll_no))].tolist()
+        filtered_df = st.session_state.df[(st.session_state.df['Section'] == Section_name)& (st.session_state.df['Class'] == class_name)& (st.session_state.df['Roll'] == int(roll_no))]
+        index=st.session_state.df.index[(st.session_state.df['Section'] == Section_name) &(st.session_state.df['Class'] == class_name)& (st.session_state.df['Roll'] == int(roll_no))].tolist()
     else:
-        filtered_df = st.session_state.df[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Name'] == select_name)]
-        index=st.session_state.df.index[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Name'] == select_name)].tolist()
+        filtered_df = st.session_state.df[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Class'] == class_name)&(st.session_state.df['Name'] == select_name)]
+        index=st.session_state.df.index[(st.session_state.df['Section'] == Section_name) & (st.session_state.df['Class'] == class_name)&(st.session_state.df['Name'] == select_name)].tolist()
     
     if not filtered_df.empty:
         with r1c2:
